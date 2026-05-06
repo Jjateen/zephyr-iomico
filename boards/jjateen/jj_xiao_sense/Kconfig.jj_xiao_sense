@@ -1,0 +1,5 @@
+# JJ XIAO Sense board configuration
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_JJ_XIAO_SENSE
+	select SOC_NRF52840_QIAA

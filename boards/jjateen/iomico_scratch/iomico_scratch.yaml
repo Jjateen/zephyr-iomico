@@ -1,0 +1,13 @@
+identifier: iomico_scratch
+name: Iomico Scratch Board
+type: mcu
+arch: arm
+ram: 256
+flash: 1024
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - gpio
+  - serial
+vendor: jjateen
