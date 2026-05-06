@@ -1,0 +1,6 @@
+board:
+  name: iomico_scratch
+  full_name: Iomico Scratch (nRF52840)
+  vendor: jjateen
+  socs:
+  - name: nrf52840

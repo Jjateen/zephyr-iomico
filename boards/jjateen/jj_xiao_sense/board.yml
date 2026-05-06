@@ -1,0 +1,6 @@
+board:
+  name: jj_xiao_sense
+  full_name: JJ XIAO Sense (nRF52840)
+  vendor: jjateen
+  socs:
+  - name: nrf52840
