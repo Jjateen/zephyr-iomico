@@ -19,16 +19,21 @@ int main(void)
 
 	LOG_INF("LED sensor ready: %s", led_dev->name);
 
+	/* L6T2: call extension API to set blink_rate_ms in driver data */
+	led_sensor_set_blink_rate(led_dev, 300);
+	LOG_INF("blink rate -> %u ms", led_sensor_get_blink_rate(led_dev));
+
 	while (1) {
 		struct sensor_value val;
+		uint32_t rate_ms = led_sensor_get_blink_rate(led_dev);
 
-		sensor_sample_fetch(led_dev);
-		k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+		sensor_sample_fetch(led_dev);          /* LED ON  */
+		k_msleep(rate_ms);
 
-		sensor_channel_get(led_dev, SENSOR_CHAN_PROX, &val);
-		k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+		sensor_channel_get(led_dev, SENSOR_CHAN_PROX, &val); /* LED OFF */
+		k_msleep(rate_ms);
 
-		LOG_INF("LED state was: %d", val.val1);
+		LOG_INF("blink cycle done, state was: %d", val.val1);
 	}
 
 	return 0;
