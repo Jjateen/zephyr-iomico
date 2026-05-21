@@ -1,0 +1,6 @@
+config LED_SENSOR
+	bool "LED Sensor Driver"
+	depends on GPIO && SENSOR
+	help
+	  Enable the LED-based sensor driver. sample_fetch turns the LED on;
+	  channel_get reports the state and turns the LED off.

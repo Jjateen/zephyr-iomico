@@ -1,0 +1,11 @@
+description: LED-based sensor — sample_fetch turns the LED on, channel_get turns it off.
+
+compatible: "jjateen,led-sensor"
+
+include: base.yaml
+
+properties:
+  gpios:
+    type: phandle-array
+    required: true
+    description: GPIO controlling the LED

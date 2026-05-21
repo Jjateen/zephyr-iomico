@@ -1,6 +1,8 @@
 
 source "Kconfig.zephyr"
 
+rsource "drivers/led_sensor/Kconfig"
+
 config APP_HEARTBEAT_PERIOD_MS
 	int "Heartbeat LED period (ms)"
 	default 500
